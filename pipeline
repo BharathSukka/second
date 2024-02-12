@@ -1,0 +1,32 @@
+pipeline {
+agent any
+stages {
+	stage ("code checkout"){
+		steps{
+			echo"we will clone git"
+			sh "git init"
+			sh "git pull https://github.com/BharathSukka/second.git"
+			sh "ls"
+			sh "git log --oneline"
+			}
+	}
+	stage ("build"){
+		steps{
+			echo"lets build a code"
+			sh "python3 like.py"
+		}
+	}
+	stage ("test"){
+		steps{
+			echo"lets Test a code"
+		}
+	}
+	stage ("deploy"){
+		steps{
+			echo"lets Deploy a code"
+		}
+	}
+}
+
+}
+
